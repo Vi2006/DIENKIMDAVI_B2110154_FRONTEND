@@ -1,13 +1,40 @@
 <template>
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/" class="navbar-brand">Ứng dụng Quản lý danh bạ</a>
-        <div class="mr-auto navbar-nav">
-            <li class="nav-item">
-                <router-link :to="{ name: 'contactbook' }" class="nav-link">
-                    Danh bạ
-                    <i class="fas fa-address-book"></i>
-                </router-link>
-            </li>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="/">Trang chủ</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/ordered">Sản phẩm</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cart">Giỏ hàng</a>
+              </li>
+              <li class="nav-item">
+                <router-link v-if="!$store.state.email" to="/login" class="nav-link">Đăng nhập</router-link>
+                <a v-if="$store.state.email" @click="logout" class="nav-link">Đăng xuất</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-</template>
+      </nav>
+    </header>
+  </template>
+  
+<script>
+
+  export default {
+    methods:{
+      logout() {
+        this.$store.commit('logout')
+        }
+      },
+      mounted() {
+        this.$store.commit('initializeStore')
+    }
+  }
+</script>
