@@ -53,7 +53,7 @@ import axios from 'axios';
 
 <style>
 .image-container {
-  margin:10px 0 0 25px;
+  margin:0px 0 0 0px;
   width: 200px;  /* Định rõ kích thước chiều rộng */
   height: 300px; /* Định rõ kích thước chiều cao */
   object-fit: cover; /* Giữ tỷ lệ khung hình và cắt ảnh để vừa khung */

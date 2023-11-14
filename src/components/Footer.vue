@@ -36,7 +36,6 @@
   <style>
   .footer-wrapper {
     position: absolute;
-    bottom: 0;
     width: 100%;
     background-color: #212529; /* Màu đen */
     color: #FFFFFF; /* Màu trắng cho văn bản */

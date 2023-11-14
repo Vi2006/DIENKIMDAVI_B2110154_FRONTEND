@@ -1,5 +1,5 @@
 import {createStore} from 'vuex';
-
+import router from '../router';
 const stores = createStore ({
     state: {
         email: "",
@@ -16,9 +16,12 @@ const stores = createStore ({
             localStorage.setItem('email', email);
         },
         logout(state) {
-            state.email = "";
-            localStorage.removeItem('email'),
-            alert('logged out');
+            const checkConfirm = confirm('Bạn có chắc chắn muốn đăng xuất không?')
+            if(checkConfirm) {
+                state.email = "";
+                localStorage.removeItem('email'),
+                router.push('/login');
+            }
         },
         initializeStore(state) {
             if(localStorage.getItem('email')) {

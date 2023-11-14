@@ -1,7 +1,7 @@
 <script>
 import AppHeader from "@/components/AppHeader.vue";
-import HeaderAdmin from "./components/HeaderAdmin.vue";
-import Footer from "./components/Footer.vue";
+import HeaderAdmin from "@/components/HeaderAdmin.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   components: {
     AppHeader,
@@ -14,19 +14,16 @@ export default {
 
 
 <template>
-  <div id="app">
-      
+  <div id="app" >
     <div >
       <AppHeader></AppHeader>
     </div>
-
-    <div style="min-height: calc(100vh - 200px);" class="container mt-3">
+    <body class="container mt-5">
       <router-view />
-    </div>
-
-    <div>
-      <Footer class="mt-4"></Footer>
-    </div>
+    </body>
+    <footer>
+      <Footer ></Footer>
+    </footer>
   </div>
 </template>
 
@@ -34,6 +31,23 @@ export default {
 .page {
   max-width: 1000px;
   margin: auto;
+}
+
+
+
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+footer {
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
 </style>
