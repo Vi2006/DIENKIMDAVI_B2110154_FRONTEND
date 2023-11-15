@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5" style="position: relative; text-align: center;">
+  <div class="container mt-5" style="position: relative;">
     <img src="https://haycafe.vn/wp-content/uploads/2022/03/Background-anime-Conan-cute.jpg" alt="Hình ảnh giới thiệu" style="max-width: 80%; display: block; margin: 0 auto;">
     <div class="card mt-5" style="position: absolute; top: 50%; left: 30%; transform: translate(-30%, -70%); width: 350px;">
       <div class="card-body">

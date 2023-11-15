@@ -19,5 +19,6 @@ class WebService {
     async getProductId(id) {
         return (await this.api.get(`/product?id=${id}`)).data;
     }
+    
 }
 export default new WebService();

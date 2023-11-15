@@ -33,13 +33,15 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="/ordered">Sản phẩm</a>
+                <router-link v-if="!$store.state.email" class="nav-link" to="/login" >Sản phẩm</router-link>
+                <a v-if="$store.state.email" class="nav-link" href="/ordered">Sản phẩm</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/cart">Giỏ hàng</a>
+                <router-link v-if="!$store.state.email" class="nav-link" to="/login" >Giỏ hàng</router-link>
+                <a v-if="$store.state.email" class="nav-link" href="/cart">Giỏ hàng</a>
               </li>
               <li class="nav-item">
-                <router-link v-if="!$store.state.email" to="/login" class="nav-link">Đăng nhập</router-link>
+                <router-link v-if="!$store.state.email" class="nav-link" to="/login" >Đăng nhập</router-link>
                 <a v-if="$store.state.email" @click="logout" class="nav-link">Đăng xuất</a>
               </li>
             </ul>
@@ -50,15 +52,22 @@
   </template>
   
 <script>
-
+// import axios from 'axios';
   export default {
+    data() {
+      return {
+        searchs: ''
+      };
+    },
     methods:{
       logout() {
         this.$store.commit('logout')
-        }
       },
-      mounted() {
-        this.$store.commit('initializeStore')
-    }
+      
+    },
+    mounted() {
+      this.$store.commit('initializeStore')
+    },
+      
   }
 </script>

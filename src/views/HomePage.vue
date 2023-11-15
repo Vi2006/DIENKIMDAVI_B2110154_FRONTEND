@@ -43,6 +43,7 @@ import axios from 'axios';
         quantity: quantity,
       };
       axios.post('http://localhost:3004/api/cart', data);
+      alert('đã thêm vào giỏ hàng!!');
     }
 
     

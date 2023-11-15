@@ -15,7 +15,7 @@ export default {
 
 <template>
   <div id="app" >
-    <div >
+    <div style="height: 64px;">
       <AppHeader></AppHeader>
     </div>
     <body class="container mt-5">
