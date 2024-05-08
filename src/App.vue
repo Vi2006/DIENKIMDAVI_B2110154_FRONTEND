@@ -16,7 +16,7 @@ export default {
 <template>
   <div id="app" >
     <div style="height: 64px;">
-      <AppHeader></AppHeader>
+      <AppHeader class="header"></AppHeader>
     </div>
     <body class="container mt-5">
       <router-view />
@@ -34,7 +34,6 @@ export default {
 }
 
 
-
 html {
   height: 100%;
 }
@@ -43,6 +42,8 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  background-size: cover; 
+    background-position: center; 
 }
 
 footer {

@@ -7,14 +7,14 @@ class WebService {
     async getProduct(){
         return (await this.api.get("/")).data;
     }
-    async getCart(){
-        return (await this.api.get("/cart")).data;
+    async getCart(email){
+        return (await this.api.get(`/cart?email=${email}`)).data;
     }
     async getAcountUser(){
         return (await this.api.get("/user")).data;
     }
-    async getOrdered(){
-        return (await this.api.get("/ordered")).data;
+    async getOrdered(email){
+        return (await this.api.get(`/ordered?email=${email}`)).data;
     }
     async getProductId(id) {
         return (await this.api.get(`/product?id=${id}`)).data;
